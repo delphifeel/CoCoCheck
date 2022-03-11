@@ -27,11 +27,12 @@ set(LOCAL_COMPLILE_OPTIONS
 )
 
 add_subdirectory(libCCORE)
+add_subdirectory(tests)
 
 add_executable(CoCoCheck 
 	src/main.c
 )
-
-target_include_directories(CoCoCheck PRIVATE include)
+target_include_directories(CoCoCheck PRIVATE ${PROJECT_SOURCE_DIR}/include)
 target_compile_options(CoCoCheck PRIVATE ${LOCAL_COMPLILE_OPTIONS})
 target_link_libraries(CoCoCheck PRIVATE CCORE)
+
