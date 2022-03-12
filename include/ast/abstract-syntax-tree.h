@@ -17,6 +17,7 @@
 typedef struct ASTModule ASTModule;
 typedef struct ASTFunction ASTFunction;
 typedef struct ASTVariable ASTVariable;
+typedef struct ASTExpression ASTExpression;
 
 
 /**
@@ -53,6 +54,13 @@ struct ASTFunction
     ASTVariable     *arguments;
     ASTVariable     return_variable;
     ASTVariable     *local_variables;
+};
+
+struct ASTExpression
+{
+    void *left;
+    void *right;
+    void *operation;
 };
 
 
